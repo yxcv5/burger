@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3 container">
+    <div class="text-center">
+      <div class="page-header">
+        <h1>Eat-Da-Burger!</h1>
+        <img src="/assets/img/best-hamburger.jpg" alt="Best Ever Burger!" height="200" width="200">
+      </div>
+    </div>
+
+    <div class="text-center">
+      <form action="/api/burgers" method="POST">
+        <div class="form-group">
+          <textarea id="burger-name" name="burgerName" rows="2" cols="60" placeholder="Enter a burger you want to eat then submit"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <hr>
+
+    <div class="row burgerlist">
+      <div class="col-xs-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Ready To Serve</h3>
+          </div>
+          <div class="panel-body">
+            <ul style="list-style: none;">
+              {{#each burgers}}
+                {{#unless this.devoured}}
+                  <li>
+                    <div class="clearfix">
+                      <p>{{this.id}}. {{this.burger_name}}</p>
+                      <button data-id="{{this.id}}" class="btn btn-danger btn-sm pull-right devourburger">Devour it!</button>
+                    </div>
+                  </li>
+                {{/unless}}
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h3 class="panel-title">That Was Yummm!</h3>
+          </div>
+          <div class="panel-body">
+            <ul style="list-style: none;">
+              {{#each burgers}}
+                {{#if this.devoured}}
+                  <li>
+                    <div class="devoured">{{this.id}}. {{this.burger_name}}</div>
+                  </li>
+                {{/if}}
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

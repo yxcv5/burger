@@ -1,0 +1,56 @@
+body {
+    background-image: url("../img/background.jpg");
+    color: #000000d6;
+}
+
+.container {
+	background: rgb(136, 111, 19); /* Fallback for older browsers without RGBA-support */
+    background: rgba(136, 111, 19, 0.85);
+    padding: 0 40px;
+}
+
+.page-header {
+	border-bottom: none;
+}
+
+h1 {
+	font-family: 'Berkshire Swash', cursive;
+	font-size: 44px;
+}
+
+img {
+	margin-bottom: 20px;
+}
+
+textarea {
+    width: 65%;
+    height: 80px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+/*    border: 2px solid #ccc;*/
+    border-radius: 4px;
+    background-color: #f1ebae;
+    resize: none;
+}
+
+.burgerlist {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.devoured {
+	margin-bottom: 20px;
+}
+
+ul {
+    -webkit-padding-start: 5px;
+}
+
+.panel {
+	background-color: #f1ebae;
+}
+
+.panel-danger>.panel-heading {
+	color: white;
+	background-color: #d9534f;
+}
